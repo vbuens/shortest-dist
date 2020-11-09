@@ -2,9 +2,19 @@
 
 Using Dijkstra's algorithm, and using a matrix with the "cost" for the connections and the cities, it can calculate what is the shortest distance between those two cities
 
-### Example of Input
+### Usage
+
+```
+php shortest_dist.php
+```
+</br>
+Input variables can be read from the input.php file
+
+### Example of input.php
 
 ```php
+$init='Logroño';
+$end='Ciudad Real';
 $cities = ['Logroño','Zaragoza','Teruel','Madrid','Lleida','Alicante','Castellón','Segovia','Ciudad Real'];
 $connections = array([0,4,6,8,0,0,0,0,0], 
         [4,0,2,0,2,0,0,0,0],
