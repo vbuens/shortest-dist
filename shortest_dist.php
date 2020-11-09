@@ -1,5 +1,7 @@
 <?php
 
+include 'input.php';
+
 function shortest($init, $end,$matrix, $cities){
 	$init = array_keys($cities,$init)[0];	#Get keys for origin and destination cities
 	$end = array_keys($cities,$end)[0];
@@ -40,19 +42,6 @@ function shortest($init, $end,$matrix, $cities){
 	return array_reverse($path);	#return json object -> json_encode(array_reverse($path));
 };
 
-# Input data
-$init='Logroño';
-$end='Ciudad Real';
-$cities=['Logroño','Zaragoza','Teruel','Madrid','Lleida','Alicante','Castellón','Segovia','Ciudad Real'];
-$connections=array([0,4,6,8,0,0,0,0,0],
-        [4,0,2,0,2,0,0,0,0],
-        [6,2,0,3,5,7,0,0,0],
-        [8,0,3,0,0,0,0,0,0],
-        [0,2,5,0,0,0,4,8,0],
-        [0,0,7,0,0,0,3,0,7],
-        [0,0,0,0,4,3,0,0,6],
-        [0,0,0,0,8,0,0,0,4],
-        [0,0,0,0,0,7,6,4,0]);
 
 $shortest_path = shortest($init,$end,$connections,$cities);
 print_r($shortest_path);
